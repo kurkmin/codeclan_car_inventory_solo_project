@@ -42,3 +42,15 @@ def update(manufacturer):
     values = [manufacturer.name, manufacturer.position, manufacturer.country, manufacturer.id]
     run_sql(sql, values)
 
+def models(manufacturers):
+    models = []
+
+    sql = "SELECT * FROM models WHERE manufacturer_id = %s"
+    values = [manufacturers.id]
+    results = run_sql(sql, values)
+
+    for row in results:
+        model = Model(row['name'], row['description'], row['stock'], row['buy_price'], row['sell_price'], row['manufacturer_id'], row['id'])
+        models.append(model)
+    return models
+

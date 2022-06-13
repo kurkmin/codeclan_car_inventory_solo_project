@@ -14,7 +14,7 @@ CREATE TABLE models (
     stock INT, 
     buy_price FLOAT, 
     sell_price FLOAT,
-    manufacturer_id INT,
+    manufacturer_id INT REFERENCES manufacturers(id),
     id SERIAL PRIMARY KEY
 ); 
 

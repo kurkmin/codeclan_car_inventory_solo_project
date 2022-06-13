@@ -22,10 +22,17 @@
         <label for="sell_price">Sell price: </label>
         <input type="text" name="sell_price", value ="{{model.sell_price}}">
     </div>
+
     <div>
-        <label for="manufacturer_id">Manufacturer: </label>
-        <select name="" id=""></select>
-        <input type="text" name="manufacturer_id", value="{{model.manufacturer_id}}">
+        <label for="manufacturer">Manufacturer: </label>
+        <select name="manufacturer_id" id="">
+            {% for manufacturer in manufacturers %}
+                <option value="{{manufacturer.id}}" 
+                    {% if model.manufacturer.id== manufacturer.id %} selected="selected"{% endif %}>
+                    {{manufacturer.name}}
+                </option> 
+            {% endfor %}
+        </select>
     </div>
 
     <button type="submit">Update</button>

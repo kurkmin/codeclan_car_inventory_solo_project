@@ -14,12 +14,13 @@ manu_repo.save(manufacturer1)
 manufacturer2 = Manufacturer("Ford", "standard", "USA")
 manu_repo.save(manufacturer2)
 
-model1 = Model("X3", "suv", 1, 15000, 20000, 1)
+manu_repo.select_all()
+
+model1 = Model("5series", "sedan", 3, 50000, 60000, manufacturer1)
 model_repo.save(model1)
-model2 = Model("5", "sedan", 1, 17000, 22000, 1)
+model2 = Model("Explorer", "suv", 1, 40000, 50000, manufacturer2)
 model_repo.save(model2)
 
-manu_repo.select_all()
 model_repo.select_all()
 
 pdb.set_trace()
