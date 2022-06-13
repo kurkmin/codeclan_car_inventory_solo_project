@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/models/new">Add Model</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</section>
+<table>
+    <thead>
+    <tr>
+        <th>name</th>
+        <th>description</th>
+        <th>stock</th>
+        <th>stock status</th>
+        <th>buy price</th>
+        <th>sell price</th>
+        <th>manufacturer</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for model in models %}
+        <tr>
+            <td>{{model.name}}</td>
+            <td>{{model.description}} </td>
+            <td>{{model.stock}}</td>
+            <td>
+                {% if model.stock == 0 %}
+                    <p>out of Stock</p>
+                {% elif model.stock == 1 %}
+                    <p>low stock</p>
+                {% else %}
+                    <p>available</p>
+                {% endif %}
+            </td>
+            <td>{{model.buy_price}}</td>
+            <td>{{model.sell_price}}</td>
+            <td>{{model.manufacturer_id}}</td>
+            <td>
+                <form action="/models/{{model.id}}" method="GET">
+                    <button>View/Edit</button> 
+                </form>
+            </td>
+            <td>
+                <form action="/models/{{model.id}}/delete" method="POST">
+                    <button>Delete</button> 
+                </form>
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+{% endblock %}

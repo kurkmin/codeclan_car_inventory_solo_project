@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section>
+    <header>
+        <nav>
+            <ul>
+                <li>
+                    <a href="manufacturers/new">Add Manufacturer</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+</section>
+<h3>Manufacturer</h3>
+<hr>
+<hr>
+<div>
+{% for manufacturer in manufacturers %}
+    <p>Name: {{manufacturer.name}}</p>
+    <p>Position: {{manufacturer.position}}</p>
+    <p>Country: {{manufacturer.country}}</p>
+    <form action="/manufacturers/{{manufacturer.id}}" method="GET">
+        <button>View/Edit</button> 
+    </form>
+    <form action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
+        <button>Delete</button> 
+    </form>
+    <hr>
+{% endfor %}
+</div>
+{% endblock %}

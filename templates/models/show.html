@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<hr>
+<hgroup>
+    <h3><a href="/models">Go to models</a></h3>
+    <h2>Model Details</h2>
+</hgroup><br><br>
+
+<div>
+    <p>Name: {{model.name}}</p><br>
+    <p>Description: {{model.description}}</p><br>
+    <p>Stock: {{model.stock}}</p><br>
+    <p>Stock status: 
+        {% if model.stock == 0 %}
+            <p>out of Stock</p>
+        {% elif model.stock == 1 %}
+            <p>low stock</p>
+        {% else %}
+            <p>available</p>
+        {% endif %}
+        <br>
+    </p>
+    <p>Buy Price: £{{model.buy_price}}</p><br>
+    <p>Sell Price: £{{model.sell_price}}</p><br>
+    <p>Manufacturer: {{model.manufacturer_id}}</p><br>   
+    
+    <a href="/models/{{model.id}}/edit">Edit</a>
+</div>
+
+{% endblock %}

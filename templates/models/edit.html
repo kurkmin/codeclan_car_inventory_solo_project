@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<form action="/models/{{model.id}}" method="POST">
+    <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name" value="{{model.name}}">
+    </div>
+    <div>
+        <label for="description">Description: </label>
+        <input type="text" name="description", value="{{model.description}}">
+    </div>
+    <div>
+        <label for="stock">Stock: </label>
+        <input type="text" name="stock", value="{{model.stock}}" >
+    </div>
+    <div>
+        <label for="buy_price">Buy price: </label>
+        <input type="text" name="buy_price", value="{{model.buy_price}}">
+    </div>
+    <div>
+        <label for="sell_price">Sell price: </label>
+        <input type="text" name="sell_price", value ="{{model.sell_price}}">
+    </div>
+    <div>
+        <label for="manufacturer_id">Manufacturer: </label>
+        <select name="" id=""></select>
+        <input type="text" name="manufacturer_id", value="{{model.manufacturer_id}}">
+    </div>
+
+    <button type="submit">Update</button>
+
+</form>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+
+<hr>
+<hgroup>
+    <h3><a href="/manufacturers">Go to manufacturers</a></h3>
+    <h2>Manufacturer Details</h2>
+</hgroup><br><br>
+
+<div>
+    <p>Name: {{manufacturer.name}}</p><br>
+    <p>Position: {{manufacturer.position}}</p><br>
+    <p>Country: {{manufacturer.country}}</p><br>
+    <a href="/manufacturers/{{manufacturer.id}}/edit">Edit</a>
+</div>
+
+{% endblock %}

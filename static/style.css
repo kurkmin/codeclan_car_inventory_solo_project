@@ -1,0 +1,65 @@
+body {
+font-family: sans-serif;
+}
+
+body header {
+    
+    background-color: grey;
+    display: flex; 
+    align-items: center;
+
+
+}
+
+
+
+
+body nav ul {
+    align-items: center;
+    display: flex; 
+    list-style: none;
+    gap: 15px
+    
+}
+
+body nav ul {
+    align-items: center;
+}
+
+#property {
+    font-size: 18px;
+    display: flex; 
+    gap: 15px
+}
+
+body section header {
+    
+    background-color: lightgrey;
+    
+    align-items: center;
+
+}
+
+body section header nav ul {
+    display: flex; 
+    gap: 15px
+}
+
+table{
+    justify-content: flex-end;
+}
+table,
+td {
+    border: 1px solid #333;
+    text-align: right;
+    
+
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+    text-align: left;
+    
+ 
+}
