@@ -8,10 +8,16 @@ body header {
     display: flex; 
     align-items: center;
 
-
 }
 
+body footer {
 
+    background-color: black;
+    display: flex;
+    text-align: center; 
+    color: white;
+    justify-content: center;
+}
 
 
 body nav ul {
@@ -45,11 +51,10 @@ body section header nav ul {
     gap: 15px
 }
 
-table{
+table {
     justify-content: flex-end;
 }
-table,
-td {
+table, td {
     border: 1px solid #333;
     text-align: right;
     
@@ -60,6 +65,14 @@ thead {
     background-color: #333;
     color: #fff;
     text-align: left;
-    
- 
+}
+
+#headline {
+    margin-left: 10px;
+}
+
+#company_name {
+    display: flex;
+    align-content: center;
+
 }

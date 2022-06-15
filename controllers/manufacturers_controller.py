@@ -1,4 +1,3 @@
-from turtle import position
 from flask import Flask, Blueprint, render_template, redirect, request
 from models.manufacturer import Manufacturer
 import repositories.manufacturer_repository as manufacturer_repository
@@ -49,6 +48,11 @@ def delete_manufacturer(id):
     manufacturer_repository.delete(id)
     return redirect("/manufacturers")
 
+@manufacturers_blueprint.route("/manufacturers/<id>/models", methods=["GET"])
+def filter_by(id):
+    manufacturer = manufacturer_repository.select(id)
+    models = manufacturer_repository.models(manufacturer)
+    return render_template("manufacturers/models", manufacturer = manufacturer, models = models)
 
 
 

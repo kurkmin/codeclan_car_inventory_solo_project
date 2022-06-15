@@ -7,3 +7,7 @@ class Model:
         self.sell_price = sell_price 
         self.manufacturer = manufacturer
         self.id = id 
+
+    def get_markup(self):
+        markup = self.sell_price - self.buy_price 
+        return markup

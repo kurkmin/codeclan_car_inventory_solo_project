@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.manufacturer import Manufacturer
+from models.model import Model
 
 def delete_all(): 
     sql = "DELETE FROM manufacturers"
@@ -42,11 +43,11 @@ def update(manufacturer):
     values = [manufacturer.name, manufacturer.position, manufacturer.country, manufacturer.id]
     run_sql(sql, values)
 
-def models(manufacturers):
+def models(manufacturer):
     models = []
 
     sql = "SELECT * FROM models WHERE manufacturer_id = %s"
-    values = [manufacturers.id]
+    values = [manufacturer.id]
     results = run_sql(sql, values)
 
     for row in results:

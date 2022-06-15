@@ -13,19 +13,24 @@
     <p>Stock: {{model.stock}}</p><br>
     <p>Stock status: 
         {% if model.stock == 0 %}
-            <p>out of Stock</p>
+            <p>&#128308; out of stock </p>
         {% elif model.stock == 1 %}
-            <p>low stock</p>
+            <p>&#128992; low stock</p>
         {% else %}
-            <p>available</p>
+            <p>&#128994; available</p>
         {% endif %}
         <br>
     </p>
     <p>Buy Price: £{{model.buy_price}}</p><br>
     <p>Sell Price: £{{model.sell_price}}</p><br>
-    <p>Manufacturer: {{model.manufacturer_id}}</p><br>   
+    <p>Markup: £{{model.get_markup()}}</p>
+    <p>Manufacturer: {{model.manufacturer.name}}</p><br>   
     
-    <a href="/models/{{model.id}}/edit">Edit</a>
+    <h3>
+        <a href="/models/{{model.id}}/edit">Edit</a>
+    </h3>
+    <br>
+    <br>
 </div>
 
 {% endblock %}

@@ -10,7 +10,8 @@ models_blueprint = Blueprint("models", __name__)
 @models_blueprint.route("/models", methods = ['GET'])
 def show_models():
     models = model_repository.select_all()
-    return render_template("models/index.html", models = models)
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("models/index.html", models = models, manufacturers = manufacturers)
 
 @models_blueprint.route("/models/<id>", methods = ['GET'])
 def show_model(id):
@@ -59,3 +60,4 @@ def update_model(id):
 def delete_model(id): 
     model_repository.delete(id)
     return redirect("/models")
+

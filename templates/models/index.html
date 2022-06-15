@@ -20,6 +20,7 @@
         <th>stock status</th>
         <th>buy price</th>
         <th>sell price</th>
+        <th>markup</th>
         <th>manufacturer</th>
     </tr>
     </thead>
@@ -32,15 +33,16 @@
             <td>{{model.stock}}</td>
             <td>
                 {% if model.stock == 0 %}
-                    <p>out of Stock</p>
+                    <p>&#128308; out of stock</p>
                 {% elif model.stock == 1 %}
-                    <p>low stock</p>
+                    <p>&#128992; low stock</p>
                 {% else %}
-                    <p>available</p>
+                    <p>&#128994; available</p>
                 {% endif %}
             </td>
-            <td>{{model.buy_price}}</td>
-            <td>{{model.sell_price}}</td>
+            <td>£{{model.buy_price}}</td>
+            <td>£{{model.sell_price}}</td>
+            <td>£{{model.get_markup()}}</td>
             <td>{{model.manufacturer.name}}</td>
             <td>
                 <form action="/models/{{model.id}}" method="GET">
