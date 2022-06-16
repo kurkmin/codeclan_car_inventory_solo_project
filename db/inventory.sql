@@ -14,7 +14,7 @@ CREATE TABLE models (
     stock INT, 
     buy_price FLOAT, 
     sell_price FLOAT,
-    manufacturer_id INT REFERENCES manufacturers(id),
+    manufacturer_id INT REFERENCES manufacturers(id) ON DELETE CASCADE,
     id SERIAL PRIMARY KEY
 ); 
 

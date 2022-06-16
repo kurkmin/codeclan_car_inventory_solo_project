@@ -9,5 +9,6 @@ class Model:
         self.id = id 
 
     def get_markup(self):
-        markup = self.sell_price - self.buy_price 
-        return markup
+        markup = float(self.stock * (self.sell_price - self.buy_price))
+        return format(markup, ",")
+

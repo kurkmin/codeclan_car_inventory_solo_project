@@ -11,7 +11,9 @@ app.register_blueprint(models_blueprint)
 
 @app.route("/")
 def main():
-    return render_template("index.html")
+    models = model_repository.select_all()
+    manufacturers = manufacturer_repository.select_all()
+    return render_template("index.html", models = models, manufacturers = manufacturers)
 
 if __name__ == "__main__":
     app.run()

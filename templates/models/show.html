@@ -8,9 +8,9 @@
 </hgroup><br><br>
 
 <div>
-    <p>Name: {{model.name}}</p><br>
-    <p>Description: {{model.description}}</p><br>
-    <p>Stock: {{model.stock}}</p><br>
+    <p>Name: {{model.name}}</p>
+    <p>Description: {{model.description}}</p>
+    <p>Stock: {{model.stock}}</p>
     <p>Stock status: 
         {% if model.stock == 0 %}
             <p>&#128308; out of stock </p>
@@ -19,10 +19,10 @@
         {% else %}
             <p>&#128994; available</p>
         {% endif %}
-        <br>
+        
     </p>
-    <p>Buy Price: £{{model.buy_price}}</p><br>
-    <p>Sell Price: £{{model.sell_price}}</p><br>
+    <p>Buy Price: £{{model.buy_price}}</p>
+    <p>Sell Price: £{{model.sell_price}}</p>
     <p>Markup: £{{model.get_markup()}}</p>
     <p>Manufacturer: {{model.manufacturer.name}}</p><br>   
     

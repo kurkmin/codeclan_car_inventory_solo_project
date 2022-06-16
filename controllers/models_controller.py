@@ -1,4 +1,3 @@
-from crypt import methods
 from flask import Flask, Blueprint, redirect, render_template, request
 from models.manufacturer import Manufacturer 
 from models.model import Model
@@ -10,8 +9,7 @@ models_blueprint = Blueprint("models", __name__)
 @models_blueprint.route("/models", methods = ['GET'])
 def show_models():
     models = model_repository.select_all()
-    manufacturers = manufacturer_repository.select_all()
-    return render_template("models/index.html", models = models, manufacturers = manufacturers)
+    return render_template("models/index.html", models = models)
 
 @models_blueprint.route("/models/<id>", methods = ['GET'])
 def show_model(id):
