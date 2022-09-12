@@ -10,5 +10,8 @@ class Model:
 
     def get_markup(self):
         markup = float(self.stock * (self.sell_price - self.buy_price))
-        return format(markup, ",")
+        return markup 
 
+    # create a method called 'get_markup', which takes self parameter (in this case, model) 
+    #   markup is calculated by model's stock times the difference between model's sell_price and model's buy_price
+    #   it returns markup finally 

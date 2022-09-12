@@ -5,26 +5,29 @@
         <nav>
             <ul>
                 <li>
-                    <a href="manufacturers/new">Add Manufacturer</a>
+                    <a href="manufacturers/new">➕ Add Manufacturer</a>
                 </li>
             </ul>
         </nav>
     </header>
 </section>
-<h3>Manufacturer</h3>
-<hr>
-<hr>
-<div>
+<h3 style="text-align:center;">
+    To view/edit manufacturer, click &#128065;  &#9998; <br> To delete manufactuer, click &#10060;
+</h3>
+
+<div class="grid-container">
 {% for manufacturer in manufacturers %}
-    <p>Name: {{manufacturer.name}}</p>
-    <p>Position: {{manufacturer.position}}</p>
-    <p>Country: {{manufacturer.country}}</p>
-    <form action="/manufacturers/{{manufacturer.id}}" method="GET">
-        <button>View/Edit</button> 
-    </form>
-    <form action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
-        <button>Delete</button> 
-    </form>
+    <div class = "grid-item">
+        <p>Name: {{manufacturer.name}}</p>
+        <p>Position: {{manufacturer.position}}</p>
+        <p>Country: {{manufacturer.country}}</p>
+        <form action="/manufacturers/{{manufacturer.id}}" method="GET">
+            <button id="view-edit-button">&#128065;  &#9998;</button> 
+        </form>
+        <form action="/manufacturers/{{manufacturer.id}}/delete" method="POST">
+            <button id="delete-button">&#10060;</button> 
+        </form>
+    </div>
     <hr>
 {% endfor %}
 </div>

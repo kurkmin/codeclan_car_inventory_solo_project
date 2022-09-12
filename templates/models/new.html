@@ -1,37 +1,45 @@
 {% extends "base.html" %}
 {% block content %}
+<h3><a href="/models"> &#8592; Go back to all models</a></h3>
+<div id="add-model">
+    <form id = "add-model-form" action="/models" method="POST">
+        <div class="center">
+            <label for="name">Name </label>
+            <input id="input-area" type="text" name="name">
+        </div>
+        <br>
+        <div>
+            <label for="description">Car type </label>
+            <input id="input-area" type="text" name="description">
+        </div>
+        <br>
+        <div>
+            <label for="stock">Stock </label>
+            <input id="input-area" type="text" name="stock">
+        </div>
+        <br>
+        <div>
+            <label for="buy_price">Buy price  </label>
+            <input id="input-area" type="text" name="buy_price">
+        </div>
+        <br>
+        <div>
+            <label for="sell_price">Sell price  </label>
+            <input id="input-area" type="text" name="sell_price">
+        </div>
+        <br>
+        <div>
+            <label for="manufacturer">Manufacturer  </label>
+            <select name="manufacturer_id" id="">
+                {% for manufacturer in manufacturers %}
+                    <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <br>
 
-<form action="/models" method="POST">
-    <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name">
-    </div>
-    <div>
-        <label for="description">Description: </label>
-        <input type="text" name="description">
-    </div>
-    <div>
-        <label for="stock">Stock: </label>
-        <input type="text" name="stock">
-    </div>
-    <div>
-        <label for="buy_price">Buy price: </label>
-        <input type="text" name="buy_price">
-    </div>
-    <div>
-        <label for="sell_price">Sell price: </label>
-        <input type="text" name="sell_price">
-    </div>
-    <div>
-        <label for="manufacturer">Manufacturer: </label>
-        <select name="manufacturer_id" id="">
-            {% for manufacturer in manufacturers %}
-                <option value="{{manufacturer.id}}">{{manufacturer.name}}</option>
-            {% endfor %}
-        </select>
-    </div>
-
-    <button type="submit">Add Model</button>
-</form>
+        <button type="submit">➕ Add Model</button>
+    </form>
+</div>
 
 {% endblock %}

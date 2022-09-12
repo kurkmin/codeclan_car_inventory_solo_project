@@ -1,22 +1,36 @@
+/* #grid-container { */
+    /* display: grid; NEW */
+    /* grid-template-areas: 
+        'header header'    
+        'body body'        
+        'footer footer';
+    grid-template-rows: 1fr 8fr 1fr; */
+/* } */
+
 body {
-font-family: sans-serif;
+    margin: 0;
+    font-family: sans-serif;
+    /* grid-area: body;  */
+
 }
 
-body header {
-    
+header {
+    padding: auto;
     background-color: grey;
     display: flex; 
     align-items: center;
-
+    /* grid-area: header; */
 }
 
 body footer {
 
     background-color: black;
     display: flex;
-    text-align: center; 
+    /* text-align: center;  */
     color: white;
     justify-content: center;
+    /* position: absolute; */
+    /* grid-area: footer; */
 }
 
 
@@ -51,12 +65,18 @@ body section header nav ul {
     gap: 15px
 }
 
+#homepage {
+    background-color: lightgray;
+}
+
 table {
     justify-content: flex-end;
+    margin-left: auto;
+    margin-right: auto;
 }
 table, td {
-    border: 1px solid #333;
-    text-align: right;
+    border: 2px solid #333;
+    text-align: center;
     
 
 }
@@ -64,7 +84,7 @@ table, td {
 thead {
     background-color: #333;
     color: #fff;
-    text-align: left;
+    text-align: center;
 }
 
 #headline {
@@ -72,7 +92,84 @@ thead {
 }
 
 #company_name {
-    display: flex;
-    align-content: center;
+    /* display: flex; */
+    /* align-content: center; */
+    text-align: center; 
 
 }
+
+
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 5px;
+    background-color: grey;
+    
+    align-items: center;
+}
+.grid-item {
+    width: 32%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    
+    font-size: 20px;
+    text-align: center;
+}
+
+#view-edit-button {
+    border: none;
+    background-color: transparent;
+}
+#view-edit-button:hover {
+    border-radius: 5px;
+    background-color: grey;
+}
+
+#delete-button {
+    border: none;
+    background-color: transparent;
+}
+
+#delete-button:hover {
+    border-radius: 5px;
+    background-color: grey;
+}
+
+#view-edit-thead {
+    background-color: darkgray;
+}
+
+#delete-thead {
+    background-color: darkgray;
+}
+
+#add-model {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    
+}
+
+#add-model-form {
+    display: inline-block
+}
+
+#input-area {
+    clear: both;
+    float: right;
+    /* margin-bottom: 10px; */
+    width: 100px;
+}
+
+#view-model {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+
+

@@ -3,11 +3,11 @@
 
 <hr>
 <hgroup>
-    <h3><a href="/models">Go to models</a></h3>
+    <h3><a href="/models"> &#8592; Go back to all models</a></h3>
     <h2>Model Details</h2>
-</hgroup><br><br>
+</hgroup>
 
-<div>
+<div id="view-model">
     <p>Name: {{model.name}}</p>
     <p>Description: {{model.description}}</p>
     <p>Stock: {{model.stock}}</p>
@@ -26,9 +26,9 @@
     <p>Markup: £{{model.get_markup()}}</p>
     <p>Manufacturer: {{model.manufacturer.name}}</p><br>   
     
-    <h3>
-        <a href="/models/{{model.id}}/edit">Edit</a>
-    </h3>
+    <h4>
+        <a href="/models/{{model.id}}/edit">&#9998; Edit</a>
+    </h4>
     <br>
     <br>
 </div>

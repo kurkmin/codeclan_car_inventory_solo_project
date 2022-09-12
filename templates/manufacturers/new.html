@@ -1,20 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-
-<form action="/manufacturers" method="POST">
-    <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name">
-    </div>
-    <div>
-        <label for="position">Position: </label>
-        <input type="text" name="position">
-    </div>
-    <div>
-        <label for="country">Country: </label>
-        <input type="text" name="country">
-    </div>
-    <button type="submit">Add Manufacturer</button>
-</form>
+<h3><a href="/manufacturers">&#8592; Go to manufacturers</a></h3>
+<div id="add-model">
+    <form id = "add-model-form" action="/manufacturers" method="POST">
+        <div>
+            <label for="name">Name  </label>
+            <input id="input-area" type="text" name="name">
+        </div>
+        <br>
+        <div>
+            <label for="position">Position  </label>
+            <input id="input-area" type="text" name="position">
+        </div>
+        <br>
+        <div>
+            <label for="country">Country  </label>
+            <input id="input-area" type="text" name="country">
+        </div>
+        <br>
+        <button type="submit">➕ Add Manufacturer</button>
+    </form>
+</div>
 
 {% endblock %}

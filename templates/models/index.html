@@ -5,7 +5,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="/models/new">Add Model</a>
+                    <a href="/models/new">➕ Add Model</a>
                 </li>
             </ul>
         </nav>
@@ -14,14 +14,16 @@
 <table>
     <thead>
     <tr>
-        <th>name</th>
-        <th>description</th>
-        <th>stock</th>
-        <th>stock status</th>
-        <th>buy price</th>
-        <th>sell price</th>
-        <th>markup</th>
-        <th>manufacturer</th>
+        <th> Name </th>
+        <th> Car Type </th>
+        <th> Stock </th>
+        <th> Stock status </th>
+        <th> Buy price </th>
+        <th> Sell price </th>
+        <th> Markup </th>
+        <th> Manufacturer </th>
+        <th id="view-edit-thead"> View/Edit </th>
+        <th id="delete-thead"> Delete </th>
     </tr>
     </thead>
 
@@ -33,11 +35,11 @@
             <td>{{model.stock}}</td>
             <td>
                 {% if model.stock == 0 %}
-                    <p>&#128308; out of stock</p>
+                    <p>&#128308; (out-of-stock)</p>
                 {% elif model.stock == 1 %}
-                    <p>&#128992; low stock</p>
+                    <p>&#128992; (low stock)</p>
                 {% else %}
-                    <p>&#128994; available</p>
+                    <p>&#128994; (available)</p>
                 {% endif %}
             </td>
             <td>£{{model.buy_price}}</td>
@@ -46,12 +48,12 @@
             <td>{{model.manufacturer.name}}</td>
             <td>
                 <form action="/models/{{model.id}}" method="GET">
-                    <button>View/Edit</button> 
+                    <button id="view-edit-button">&#128065;  &#9998;</button> 
                 </form>
             </td>
             <td>
                 <form action="/models/{{model.id}}/delete" method="POST">
-                    <button>Delete</button> 
+                    <button id="delete-button">&#10060;</button> 
                 </form>
             </td>
         </tr>
