@@ -1,5 +1,5 @@
 Sumin Oh (SR10) - Project for week5 
-Python, Flask, Pyschopg2, Postgressql, Html, Css 
+Python, Flask, Pyschopg2, Postgressql, Html, CSS 
 
 To run app, 
 
